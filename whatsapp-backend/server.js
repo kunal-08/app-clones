@@ -15,13 +15,14 @@ const pusher = new Pusher({
     encrypted: true
 });
 
-// pusher.trigger('my-channel', 'my-event', {
-//     'message': 'hello world'
-// });
-
-
 // middleware
-app.use(express.json())
+app.use(express.json());
+
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.set("Access-Control-Allow-Headers", "*");
+    next();
+})
 
 // DB config
 const connection_url = 'mongodb+srv://maverick:artemis@9tails@cluster0.qsdbo.mongodb.net/whatsappdb?retryWrites=true&w=majority'
@@ -46,7 +47,7 @@ db.once('open', () => {
             const messageDetails = change.fullDocument;
 
             pusher.trigger('messages', 'inserted', {
-                name: messageDetails.user,
+                name: messageDetails.name,
                 message: messageDetails.message,
             });
         } else {
