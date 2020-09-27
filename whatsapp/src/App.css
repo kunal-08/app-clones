@@ -1,0 +1,20 @@
+.app{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #000000;
+    color: aliceblue;
+}
+
+.app__body{
+    display: flex;
+    background-color: #282C341;
+    margin-top: -50px;
+    height: 90vh;
+    width: 90vw;
+}
+
+/*nav bg: #20232A*/
+/* grey #ECECEC*/
+/* dark -01 : #282C34 */
+/* dark-02: #20232A */
