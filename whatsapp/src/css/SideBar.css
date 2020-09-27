@@ -45,9 +45,15 @@
     padding: 5px;
 }
 
-.sidebar__searchContainer > input{
+.sidebar__searchContainer > input {
     width: 75%;
     border: none;
     outline-width: 0px;
     margin-left: 10px;
+}
+
+.sidebar__chats {
+    flex: 1;
+    background-color: #ffffff;
+    overflow: scroll;
 }

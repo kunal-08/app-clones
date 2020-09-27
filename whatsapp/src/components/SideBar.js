@@ -4,6 +4,7 @@ import {Avatar, IconButton} from "@material-ui/core";
 
 import '../css/SideBar.css'
 import kunalDp from '../images/kunal-dp.jpg'
+import SidebarChat from "./SidebarChat";
 
 function SideBar() {
     return (
@@ -30,8 +31,15 @@ function SideBar() {
                 <div className="sidebar__searchContainer">
                     <SearchOutlined/>
                     <input placeholder="Seach or start a new chat"
-                    type="text"/>
+                           type="text"/>
                 </div>
+            </div>
+
+            <div className="sidebar__chats">
+                <SidebarChat/>
+                <SidebarChat/>
+                <SidebarChat/>
+                <SidebarChat/>
             </div>
         </div>
     );
