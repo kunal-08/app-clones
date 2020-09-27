@@ -1,14 +1,19 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Pusher from 'pusher-js';
-
+import axios from './axios';
 import SideBar from "./components/SideBar";
 import Chat from "./components/Chat";
 
 function App() {
 
+    const [messages, setMessages] = useState([]);
+
     useEffect(() => {
-        
+        axios.get('/messages/sync')
+            .then(response => {
+                console.log(response.data)
+            })
     }, []);
 
     useEffect(() => {
@@ -17,11 +22,19 @@ function App() {
         });
 
         const channel = pusher.subscribe('messages');
-        channel.bind('inserted', function (data) {
-            alert(JSON.stringify(data));
+        channel.bind('inserted', function (newMessages) {
+            setMessages([...messages, newMessages])
         });
 
-    }, []);
+        // Cleaner function
+        return () => {
+            channel.unbind_all();
+            channel.unsubscribe();
+        }
+
+    }, [messages]);
+
+    console.log(messages)
 
     return (
         <div className="app">
