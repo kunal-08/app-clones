@@ -3,11 +3,14 @@ import '../css/Chat.css'
 import {Avatar, IconButton} from "@material-ui/core";
 import {AttachFile, DonutLarge, InsertEmoticon, Mic, MoreVert, SearchOutlined} from "@material-ui/icons";
 
+import ironMan from '../images/iron-man.jpeg'
+
+
 function Chat() {
     return (
         <div className="chat">
             <div className="chat__header">
-                <Avatar/>
+                <Avatar src={ironMan}/>
 
                 <div className="chat__headerInfo">
                     <h3>Iron Man</h3>
@@ -39,8 +42,8 @@ function Chat() {
                 </p>
 
                 <p className="chat__message chat__receiver">
-                    <span className="chat__name">Iron Man</span>
-                    Hey kids.
+                    <span className="chat__name">You</span>
+                    Hello baba.
                     <span className="chat__timestamp">
                         {new Date().toUTCString()}
                     </span>
@@ -56,6 +59,7 @@ function Chat() {
                 <form>
                     <input placeholder="Type a message"
                            type="text"/>
+
                     <button
                         type="submit">
                         Send a messgae
