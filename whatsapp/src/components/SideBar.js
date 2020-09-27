@@ -4,6 +4,13 @@ import {Avatar, IconButton} from "@material-ui/core";
 
 import '../css/SideBar.css'
 import kunalDp from '../images/kunal-dp.jpg'
+
+import spiderMan from '../images/spider-man.jpeg'
+import captainA from '../images/capt-america.jpeg'
+import ironMan from '../images/iron-man.jpeg'
+import thor from '../images/thor.jpeg'
+
+
 import SidebarChat from "./SidebarChat";
 
 function SideBar() {
@@ -36,10 +43,10 @@ function SideBar() {
             </div>
 
             <div className="sidebar__chats">
-                <SidebarChat/>
-                <SidebarChat/>
-                <SidebarChat/>
-                <SidebarChat/>
+                <SidebarChat avatarSrc={ironMan} roomName="Iron Man" message="Hey kids."/>
+                <SidebarChat avatarSrc={captainA} roomName="Captain America" message="Hey boi"/>
+                <SidebarChat avatarSrc={thor} roomName="King of Asgard" message="Lol"/>
+                <SidebarChat avatarSrc={spiderMan} roomName="Peter Parker" message="Hello Mr. Stark"/>
             </div>
         </div>
     );
