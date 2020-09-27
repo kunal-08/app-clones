@@ -9,8 +9,6 @@ const port = process.env.PORT || 9000
 // middleware
 app.use(express.json())
 
-
-
 // DB config
 const connection_url = 'mongodb+srv://maverick:artemis@9tails@cluster0.qsdbo.mongodb.net/whatsappdb?retryWrites=true&w=majority'
 mongoose.connect(connection_url, {
@@ -32,6 +30,17 @@ app.post('/messages/new',
                 res.status(500).send(err)
             } else {
                 res.status(201).send('new message created: \n' + data)
+            }
+        })
+    });
+
+app.get('/messages/sync',
+    (req, res) => {
+        Messages.find((err, data) => {
+            if (err) {
+                res.status(500).send(err)
+            } else {
+                res.status(200).send(data)
             }
         })
     })
