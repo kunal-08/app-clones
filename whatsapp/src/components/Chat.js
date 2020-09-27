@@ -1,12 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/Chat.css'
 import {Avatar, IconButton} from "@material-ui/core";
 import {AttachFile, DonutLarge, InsertEmoticon, Mic, MoreVert, SearchOutlined} from "@material-ui/icons";
 
-import ironMan from '../images/iron-man.jpeg'
+import ironMan from '../images/iron-man.jpeg';
+import axios from "../axios";
 
 
 function Chat({messages}) {
+
+    const [input, setInput] = useState("");
+
+    const sendMessage = async (e) => {
+        e.preventDefault();
+
+        const d = new Date();
+        const currentTime = d.toUTCString();
+
+        await axios.post('/messages/new',
+            {
+                message: input,
+                name: "Iron Man",
+                timestamp: currentTime,
+                received: false
+            });
+
+        setInput("");
+    }
+
     return (
         <div className="chat">
             <div className="chat__header">
@@ -34,7 +55,7 @@ function Chat({messages}) {
 
             <div className="chat__body">
                 {messages.map((message) => (
-                    <p className={`chat__message ${message.received && "chat__receiver"}`}>
+                    <p className={`chat__message ${!message.received && "chat__receiver"}`}>
                         <span className="chat__name">{message.name}</span>
                         {message.message}
                         <span className="chat__timestamp">{message.timestamp}</span>
@@ -46,11 +67,12 @@ function Chat({messages}) {
                 <InsertEmoticon/>
 
                 <form>
-                    <input placeholder="Type a message"
+                    <input value={input} onChange={e => setInput(e.target.value)}
+                           placeholder="Type a message"
                            type="text"/>
 
-                    <button
-                        type="submit">
+                    <button onClick={sendMessage}
+                            type="submit">
                         Send a messgae
                     </button>
                 </form>
