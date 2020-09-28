@@ -12,7 +12,6 @@ import {
     Redirect
 } from "react-router-dom";
 import Login from "./components/Login";
-import SignUp from "./components/SignUp";
 
 function App() {
 
@@ -50,12 +49,8 @@ function App() {
             <div className="app__body">
                 <Router>
                     <Switch>
-                        <Route path="/login">
+                        <Route path="/">
                             <Login/>
-                        </Route>
-
-                        <Route path="/signUp">
-                            <SignUp/>
                         </Route>
 
                         <Route path="/chat">

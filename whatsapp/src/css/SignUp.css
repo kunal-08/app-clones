@@ -1,40 +1,30 @@
 .signup {
     color: #2f333b;
-    place-items: center;
+    display: flex;
 }
 
 .signup__main {
-    border-radius: 5px;
-    display: flex;
     flex-direction: column;
+    border-radius: 5px;
     width: 60vw;
     height: 60vh;
     margin-left: 20vw;
-    margin-top: 20vh;
+    margin-top: 15vh;
     background: lightgrey;
     align-content: center;
+    padding: 20px;
 }
 
-.signup__header {
-    padding: 10px;
+.signup__header{
     text-align: center;
 }
 
-.signup__header > h2 {
-    margin-bottom: 10px;
-}
-
-.signup__body {
-    color: #ffffff;
-    align-content: center;
-}
-
-.signup__body > .MuiSvgIcon-root {
-    color: gray;
-    padding: 5px;
-}
-
-.signup__footer {
+.signup__container{
     flex: 1;
-    align-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.signup__button{
+    margin-top: 10px;
 }

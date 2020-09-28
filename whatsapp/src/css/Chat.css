@@ -78,6 +78,8 @@
 
 .chat__footer > form > input {
     flex: 1;
+    font-size: medium;
+    color: lightgrey;
     border-radius: 30px;
     padding: 10px;
     border: none;
