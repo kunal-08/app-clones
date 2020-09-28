@@ -40,13 +40,13 @@
     padding: 10px;
     width: fit-content;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: #8f8e8e;
     margin-bottom: 30px;
 }
 
 .chat__receiver {
     margin-left: auto;
-    background-color: #DCF8C6;
+    background-color: #075E54;
 }
 
 .chat__timestamp {
@@ -59,6 +59,7 @@
     top: -15px;
     font-weight: 800;
     font-size: xx-small;
+    color: lightgrey;
 }
 
 .chat__footer {
@@ -67,7 +68,6 @@
     justify-content: space-between;
     align-items: center;
     height: 62px;
-    border-top: 1px solid lightgray;
     color: lightgrey;
 }
 
@@ -91,5 +91,5 @@
 
 .chat__footer > .MuiSvgIcon-root {
     padding: 10px;
-    color: gray;
+    color: #808080;
 }
