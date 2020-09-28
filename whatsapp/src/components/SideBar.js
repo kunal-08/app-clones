@@ -12,12 +12,16 @@ import thor from '../images/thor.jpeg'
 
 
 import SidebarChat from "./SidebarChat";
+import {useStateValue} from "../StateProvider";
 
 function SideBar() {
+
+    const [{user}, dispatch] = useStateValue();
+
     return (
         <div className="sidebar">
             <div className="sidebar__header">
-                <Avatar src={kunalDp}/>
+                <Avatar src={user?.photoURL}/>
 
                 <div className="sidebar__headerRight">
                     <IconButton color="inherit">
@@ -36,7 +40,7 @@ function SideBar() {
 
             <div className="sidebar__search">
                 <div className="sidebar__searchContainer">
-                    <SearchOutlined />
+                    <SearchOutlined/>
                     <input placeholder="Seach or start a new chat"
                            type="text"/>
                 </div>

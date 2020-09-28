@@ -4,13 +4,21 @@ import {Button} from "@material-ui/core";
 import {auth, provider} from "../firebase";
 
 import whatsappLogo from "../images/whatsapp.svg"
+import {useStateValue} from "../StateProvider";
+import {actionType} from "../reducer";
 
 function Login() {
+
+    const [{}, dispatch] = useStateValue();
 
     const signIn = () => {
         auth
             .signInWithRedirect(provider)
-            .then((result) => console.log(result))
+            .then((result) =>
+                dispatch({
+                    type: actionType.SET_USER,
+                    user: result.user,
+                }))
             .catch((error) => alert(error.message));
     }
 

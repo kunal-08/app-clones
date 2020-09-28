@@ -12,10 +12,12 @@ import {
     Redirect
 } from "react-router-dom";
 import Login from "./components/Login";
+import {useStateValue} from "./StateProvider";
 
 function App() {
 
     const [messages, setMessages] = useState([]);
+    const [{user}, dispatch] = useStateValue();
 
     useEffect(() => {
         axios.get('/messages/sync')
@@ -46,21 +48,21 @@ function App() {
 
     return (
         <div className="app">
-            <div className="app__body">
-                <Router>
-                    <Switch>
-                        <Route path="/">
-                            <Login/>
-                        </Route>
+            {!user ? (
+                <Login/>
+            ) : (
+                <div className="app__body">
+                    <Router>
+                        <SideBar/>
 
-                        <Route path="/chat">
-                            <SideBar/>
-                            <Chat messages={messages}/>
-                        </Route>
-
-                    </Switch>
-                </Router>
-            </div>
+                        <Switch>
+                            <Route path="/">
+                                <Chat />
+                            </Route>
+                        </Switch>
+                    </Router>
+                </div>
+            )}
         </div>
     );
 }
