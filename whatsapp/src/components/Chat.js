@@ -39,15 +39,15 @@ function Chat({messages}) {
                 </div>
 
                 <div className="chat__headerRight">
-                    <IconButton>
+                    <IconButton color="inherit">
                         <SearchOutlined/>
                     </IconButton>
 
-                    <IconButton>
+                    <IconButton color="inherit">
                         <AttachFile/>
                     </IconButton>
 
-                    <IconButton>
+                    <IconButton color="inherit">
                         <MoreVert/>
                     </IconButton>
                 </div>
@@ -64,7 +64,9 @@ function Chat({messages}) {
             </div>
 
             <div className="chat__footer">
-                <InsertEmoticon/>
+                <IconButton color="inherit">
+                    <InsertEmoticon/>
+                </IconButton>
 
                 <form>
                     <input value={input} onChange={e => setInput(e.target.value)}
@@ -76,7 +78,10 @@ function Chat({messages}) {
                         Send a messgae
                     </button>
                 </form>
-                <Mic/>
+
+                <IconButton color="inherit">
+                    <Mic/>
+                </IconButton>
             </div>
         </div>
     );

@@ -20,15 +20,15 @@ function SideBar() {
                 <Avatar src={kunalDp}/>
 
                 <div className="sidebar__headerRight">
-                    <IconButton>
+                    <IconButton color="inherit">
                         <DonutLarge/>
                     </IconButton>
 
-                    <IconButton>
+                    <IconButton color="inherit">
                         <Chat/>
                     </IconButton>
 
-                    <IconButton>
+                    <IconButton color="inherit">
                         <MoreVert/>
                     </IconButton>
                 </div>
@@ -36,7 +36,7 @@ function SideBar() {
 
             <div className="sidebar__search">
                 <div className="sidebar__searchContainer">
-                    <SearchOutlined/>
+                    <SearchOutlined />
                     <input placeholder="Seach or start a new chat"
                            type="text"/>
                 </div>

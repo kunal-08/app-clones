@@ -1,14 +1,15 @@
 .chat {
     display: flex;
     flex-direction: column;
-    flex: 0.65;
+    flex: 0.70;
 }
 
 .chat__header {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #000000;
     padding: 20px;
+    color: #ffffff;
 }
 
 .chat__headerInfo {
@@ -27,7 +28,7 @@
 
 .chat__body {
     flex: 1;
-    background-image: url("../images/whatsapp-chat.png");
+    background-image: url("../images/chat-bg1.jpg");
     background-repeat: repeat;
     background-position: center;
     padding: 30px;
@@ -46,7 +47,7 @@
 
 .chat__receiver {
     margin-left: auto;
-    background-color: #cffacf;
+    background-color: #DCF8C6;
 }
 
 .chat__timestamp {
@@ -62,11 +63,13 @@
 }
 
 .chat__footer {
+    background-color: #20232A;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 62px;
     border-top: 1px solid lightgray;
+    color: lightgrey;
 }
 
 .chat__footer > form {
@@ -80,6 +83,7 @@
     padding: 10px;
     border: none;
     outline-width: 0;
+    background-color: #282C34;
 }
 
 .chat__footer > form > button {
