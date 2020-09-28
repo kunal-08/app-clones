@@ -5,6 +5,11 @@ import {Button} from "@material-ui/core";
 import whatsappLogo from "../images/whatsapp.svg"
 
 function Login() {
+
+    const signIn = () => {
+
+    }
+
     return (
         <div className="login">
             <div className="login__container">
@@ -12,7 +17,7 @@ function Login() {
 
                 <h2>Sign to WhatsApp</h2>
 
-                <Button>Sign In with google</Button>
+                <Button onClick={signIn}>Sign In with google</Button>
             </div>
         </div>
     );
