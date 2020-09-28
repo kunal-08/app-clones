@@ -4,6 +4,15 @@ import Pusher from 'pusher-js';
 import axios from './axios';
 import SideBar from "./components/SideBar";
 import Chat from "./components/Chat";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect
+} from "react-router-dom";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
 
@@ -39,16 +48,23 @@ function App() {
     return (
         <div className="app">
             <div className="app__body">
-                {/*<Router>*/}
-                {/*    <Switch>*/}
-                {/*        <Route path="/login">*/}
+                <Router>
+                    <Switch>
+                        <Route path="/login">
+                            <Login/>
+                        </Route>
 
-                {/*        </Route>*/}
-                {/*    </Switch>*/}
-                {/*</Router>*/}
+                        <Route path="/signUp">
+                            <SignUp/>
+                        </Route>
 
-                <SideBar/>
-                <Chat messages={messages}/>
+                        <Route path="/chat">
+                            <SideBar/>
+                            <Chat messages={messages}/>
+                        </Route>
+
+                    </Switch>
+                </Router>
             </div>
         </div>
     );
