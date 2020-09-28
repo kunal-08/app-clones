@@ -2,11 +2,11 @@
     display: flex;
     padding: 20px;
     cursor: pointer;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #4e535d;
 }
 
 .sideBarChat:hover{
-    background-color: #20232A;
+    background-color: #4e535d;
 }
 
 .sidebarChat__info > h2{

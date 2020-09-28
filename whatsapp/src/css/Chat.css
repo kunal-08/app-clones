@@ -7,7 +7,6 @@
 .chat__header {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #000000;
     padding: 20px;
     color: #ffffff;
 }

@@ -39,6 +39,14 @@ function App() {
     return (
         <div className="app">
             <div className="app__body">
+                {/*<Router>*/}
+                {/*    <Switch>*/}
+                {/*        <Route path="/login">*/}
+
+                {/*        </Route>*/}
+                {/*    </Switch>*/}
+                {/*</Router>*/}
+
                 <SideBar/>
                 <Chat messages={messages}/>
             </div>
